@@ -1,0 +1,145 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(228, 228, 228);
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(95, 95, 95);
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+.bg-white {
+    background-color: white;
+}
+.space-between {
+    justify-content: space-between;
+}
+.barra {
+    border-radius: 30px;
+    background-color: rgb(202, 202, 202);
+    width: 35px;
+    color: white;
+    margin-left: 10px;
+    height: 22px;
+}
+.automatic {
+    background-color: rgb(255, 145, 0);
+    text-align: end;
+}
+.nodisplay {
+    display: none;
+}
+.display {
+    display: inline;
+}
+ul {
+    padding: 0%;
+    margin: 0%;
+}
+li {
+    list-style: none;
+}
+label, input{
+    margin-right: 10px;
+    font-family: inherit;
+    color: inherit;
+}
+button{
+    border: none;
+    font-family: inherit;
+}
+
+.base{
+    display: flex;
+    /* justify-content: center; */
+}
+.container {
+    display: flex;
+    width: 70%;
+    height: 550px;
+    margin: 50px 180px;
+}
+.container img {
+    width: 100%;
+}
+.container:hover .a, .container:hover .b{
+    display: inline;
+}
+.container:hover .aside{
+    display: inline;
+}
+.play, .pause {
+    position: absolute;
+    left: 630px;
+    top: 330px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+.play i, .pause i {
+    color: rgba(75, 75, 75, 0.472) !important;
+    font-size: 90px !important;
+}
+.play:hover i, .pause:hover i {
+    color: white !important;
+}
+.container:hover .pause{
+    display: inline;
+}
+.pause {
+    display: none;
+}
+.a, .b {
+    display: none;
+    position: absolute;
+    border: none;
+    background-color: rgba(240, 240, 240, 0.438);
+    padding: 15px;
+    height: 550px;
+}
+.a:hover, .b:hover {
+    background-color: rgb(255, 145, 0);
+}
+.container i{
+    color: white;
+    font-size: 50px;
+}
+.a {
+    margin-left: 870px;
+}
+.aside {
+    position: absolute;
+    display: none;
+    width: 950px;
+    justify-content: center;
+    top: 560px;
+    left: 460px;
+}
+.aside ul {
+    display: grid;
+    grid-template-columns: repeat(3, 12%);
+    position: relative;
+    gap: 15px;
+}
+.aside li {
+    display: flex;
+    justify-content: center;
+}
+.aside img{
+    width: 100%;
+}
+.aside li:hover {
+    opacity: 1;
+}
+.aside .side{
+    height: 70px;
+    align-self: center;
+    opacity: 0.5;
+    border: 2px white solid;
+}
+.current {    
+    opacity: 1;
+    height: 70px;
+    border: 2px white solid;
+}
