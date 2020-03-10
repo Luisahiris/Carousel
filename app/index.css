@@ -53,13 +53,17 @@ button{
 
 .base{
     display: flex;
+    justify-content: center;
     /* justify-content: center; */
 }
 .container {
-    display: flex;
     width: 70%;
     height: 550px;
-    margin: 50px 180px;
+    margin-top: 30px;
+    /* margin: 50px 180px; */
+}
+.image {
+    height: 550px;
 }
 .container img {
     width: 100%;
@@ -68,7 +72,7 @@ button{
     display: inline;
 }
 .container:hover .aside{
-    display: inline;
+    display: flex;
 }
 .play, .pause {
     position: absolute;
@@ -106,21 +110,21 @@ button{
     font-size: 50px;
 }
 .a {
-    margin-left: 870px;
+    margin-left: 882px;
 }
 .aside {
-    position: absolute;
+    /* position: absolute; */
     display: none;
-    width: 950px;
     justify-content: center;
-    top: 560px;
-    left: 460px;
+    height: 0;
 }
 .aside ul {
     display: grid;
-    grid-template-columns: repeat(3, 12%);
+    width: 40%;
+    grid-template-columns: repeat(3, 30%);
     position: relative;
     gap: 15px;
+    top: -100px;
 }
 .aside li {
     display: flex;

@@ -7,7 +7,7 @@ import './index.css'
 
 class App extends React.Component {
     state = {
-        automatic: true,
+        automatic: false,
         toggleAuto: () => {
             this.setState(({ automatic }) => ({
                 automatic: automatic === true ? false : true
