@@ -1,14 +1,14 @@
-import React from 'react'
-import { AutoConsumer } from '../context/auto'
+import React from "react";
+import {AutoConsumer} from "../context/auto";
 
 export default function NavConfig () {
     return (
         <AutoConsumer>
-            {({ automatic, toggleAuto, speed, toggleSpeed }) => (
+            {({automatic, toggleAuto, speed, toggleSpeed}) => (
                 <ul className='row bg-white'>
                     <li className='row'>
                         Auto
-                        <div className={`barra ${automatic === true ? 'automatic' : ''}`} onClick={toggleAuto}>
+                        <div className={`barra ${automatic === true ? "automatic" : ""}`} onClick={toggleAuto}>
                             <i className="fas fa-circle circle"></i>
                         </div>
                     </li>
@@ -21,5 +21,5 @@ export default function NavConfig () {
                 </ul>
             )}
         </AutoConsumer>
-    )
+    );
 }

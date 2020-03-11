@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-const { Consumer, Provider } = React.createContext()
+const {Consumer, Provider} = React.createContext();
 
-export const AutoProvider = Provider
-export const AutoConsumer = Consumer
+export const AutoProvider = Provider;
+export const AutoConsumer = Consumer;
