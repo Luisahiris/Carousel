@@ -7,31 +7,31 @@ import "./index.css";
 
 class App extends React.Component {
     state = {
-        automatic: false,
-        toggleAuto: () => {
-            this.setState(({automatic}) => ({
-                automatic: automatic === true ? false : true
-            }));
-        },
-        speed: "",
-        toggleSpeed: (event) => {
-            this.setState({
-                speed: event.target.value
-            });
-        }
+      automatic: false,
+      toggleAuto: () => {
+        this.setState(({automatic}) => ({
+          automatic: automatic === true ? false : true
+        }));
+      },
+      speed: "",
+      toggleSpeed: (event) => {
+        this.setState({
+          speed: event.target.value
+        });
+      }
     };
 
     render () {
-        return (
-            <AutoProvider value={this.state}>
-                <NavConfig />
-                <Carousel speed={this.state.speed !== ""? this.state.speed : 3000} />
-            </AutoProvider>
-        );
+      return (
+        <AutoProvider value={this.state}>
+          <NavConfig />
+          <Carousel speed={this.state.speed !== ""? this.state.speed : 3000} />
+        </AutoProvider>
+      );
     }
 }
 
 ReactDom.render(
-    <App />, 
-    document.getElementById("root")
+  <App />, 
+  document.getElementById("root")
 );
