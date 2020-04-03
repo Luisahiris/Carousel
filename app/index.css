@@ -40,6 +40,7 @@ ul {
 }
 li {
     list-style: none;
+    height: 25px;
 }
 label, input{
     margin-right: 10px;
@@ -149,6 +150,32 @@ button{
     opacity: 1;
     height: 70px;
     border: 2px white solid;
+}
+.card {
+    background-color: rgb(255, 145, 0);
+    padding: 2px 10px;
+    border-radius: 5px;
+    color: white;
+}
+.card i{
+    margin-left: 5px;
+    color: rgba(240, 240, 240, 0.438);
+}
+.card i:hover{
+    color: white;
+}
+input {
+    border: none;
+    background-color: rgb(241, 241, 241);
+    border-radius: 2px;
+    font-size: 15px;
+}
+.submit {
+    padding: 2px 20px;
+}
+.submit:enabled {
+    background-color: rgb(255, 145, 0);
+    color: white;
 }
 @media all and (max-width: 1000px) {
     .container {

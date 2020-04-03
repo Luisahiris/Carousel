@@ -1,25 +1,89 @@
 import React from "react";
-import {AutoConsumer} from "../context/auto";
+import PropTypes from 'prop-types'
 
-export default function NavConfig () {
-  return (
-    <AutoConsumer>
-      {({automatic, toggleAuto, speed, toggleSpeed}) => (
+class SpeedInput extends React.Component {
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired
+  }
+  state = {
+    input: null
+  }
+  handleSumit = () => {
+    this.props.onSubmit(this.state.input)
+  }
+  handleChange = (event) => {
+    this.setState({input: event.target.value})
+  }
+  render () {
+    return (
+      <form onSubmit={this.handleSumit}>
+        <label htmlFor='speed'>Speed</label>
+        <input 
+          type='text' 
+          id='speed' 
+          placeholder=' milliseconds' 
+          value={this.state.speed}
+          autoComplete='off' 
+          onChange={this.handleChange}
+        />
+        <button type='submit' className='submit' disabled={!this.state.input}>Sumit</button>
+      </form>
+    );
+  }
+}
+
+export default class NavConfig extends React.Component {
+  static propTypes = {
+    children: PropTypes.func
+  }
+  state = {
+    display: '',
+    speed: undefined
+  }
+  toggleAuto = () => {
+    this.setState(({ display }) => ({
+      display: display === '' ? 'automatic' : ''
+    }))
+  }
+  toggleSpeed = (speed) => {
+    this.setState({
+      speed
+    })
+  }
+  close = () => {
+    this.setState({
+      speed: undefined
+    })
+  }
+  render () {
+    return (
+      <React.Fragment>
         <ul className='row bg-white'>
           <li className='row'>
-                        Auto
-            <div className={`barra ${automatic === true ? "automatic" : ""}`} onClick={toggleAuto}>
-              <i className="fas fa-circle circle"></i>
+                Auto
+            <div 
+              className={`barra ${this.state.display}`} 
+            >
+              <i 
+                className="fas fa-circle"
+                onClick={() => this.toggleAuto()}
+              ></i>
             </div>
           </li>
-          {automatic === true && (
+          {this.state.display === 'automatic' &&
             <li className='row'>
-              <label>Speed</label>
-              <input type='text' id='speed' placeholder='milliseconds' autoComplete='off' value={speed} onChange={toggleSpeed} />
+              {this.state.speed === undefined
+                ? <SpeedInput onSubmit={this.toggleSpeed} />
+                : <div className='card'>
+                  {this.state.speed}
+                  <i className="fas fa-times" onClick={() => this.close()}></i>
+                </div>
+              }
             </li>
-          )}
+          }
         </ul>
-      )}
-    </AutoConsumer>
-  );
+        {this.props.children(parseInt(this.state.speed), this.state.display)}
+      </React.Fragment>
+    );
+  }
 }
